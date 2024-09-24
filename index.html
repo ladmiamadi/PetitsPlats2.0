@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="assets/style/home.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/style/home.css">
+    <link rel="stylesheet" href="./assets/style/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Petits plats</title>
 </head>
 <body>
-<header></header>
-<main></main>
-
+    <header class="container relative w-full h-[667px] mx-auto bg-[url('../images/hero.png')] bg-cover bg-no-repeat">
+        <h1 aria-label="Les petits plats">
+            <a href="index.html" title="Page d'accueil">
+                <img src="assets/images/logo.png" alt="Logo les petits plats"
+                     class="w-[207px] h-[26px] absolute z-10 top-[51px] left-[69px]">
+            </a>
+        </h1>
+        <h2 class="absolute w-[890px] h-[132px] font-anton top-[245px] text-yellow text-center text-5xl uppercase left-[50%] translate-x-[-50%]">
+            Cherchez parmi plus de 1500 recettes du quotidien simples et délicieuses
+        </h2>
+    </header>
+    <main class="container bg-lightGrey px-[102px] py-4">
+        <div id="filters" class="flex justify-between"></div>
+        <div id="recipes" class="w-full pt-[55px] grid grid-cols-3 gap-[90px]">
+        </div>
+    </main>
 <script type="module" src="/scripts/pages/index.js"></script>
 </body>
 </html>

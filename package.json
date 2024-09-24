@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --files \"*\"\n",
-    "dev": "http-server",
+    "start": "browser-sync start --server --files \"*\"",
+    "style": " npx tailwindcss -i ./assets/style/home.css -o ./assets/style/tailwind.css --watch\n"
   },
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "tailwindcss": "^3.4.12"
   }
 }
