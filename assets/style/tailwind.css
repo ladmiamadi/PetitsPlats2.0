@@ -634,6 +634,26 @@ video {
   top: 51px;
 }
 
+.right-\[\]{
+  right: ;
+}
+
+.top-\[\]{
+  top: ;
+}
+
+.right-\[11px\]{
+  right: 11px;
+}
+
+.top-\[11px\]{
+  top: 11px;
+}
+
+.right-\[25px\]{
+  right: 25px;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -643,12 +663,25 @@ video {
   margin-right: auto;
 }
 
+.my-\[14px\]{
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
 .mb-\[21px\]{
   margin-bottom: 21px;
 }
 
 .mb-\[32px\]{
   margin-bottom: 32px;
+}
+
+.mb-\[24px\]{
+  margin-bottom: 24px;
+}
+
+.mb-\[30px\]{
+  margin-bottom: 30px;
 }
 
 .block{
@@ -693,6 +726,10 @@ video {
 
 .h-\[72px\]{
   height: 72px;
+}
+
+.h-\[36px\]{
+  height: 36px;
 }
 
 .w-\[195px\]{
@@ -772,6 +809,10 @@ video {
   overflow: hidden;
 }
 
+.overflow-y-scroll{
+  overflow-y: scroll;
+}
+
 .rounded-\[10px\]{
   border-radius: 10px;
 }
@@ -788,12 +829,30 @@ video {
   border-radius: 21px;
 }
 
+.rounded-\[2px\]{
+  border-radius: 2px;
+}
+
 .rounded-bl-\[11px\]{
   border-bottom-left-radius: 11px;
 }
 
 .rounded-br-\[11px\]{
   border-bottom-right-radius: 11px;
+}
+
+.border{
+  border-width: 1px;
+}
+
+.border-grey{
+  --tw-border-opacity: 1;
+  border-color: rgb(122 122 122 / var(--tw-border-opacity));
+}
+
+.border-lightGrey{
+  --tw-border-opacity: 1;
+  border-color: rgb(197 197 197 / var(--tw-border-opacity));
 }
 
 .bg-darkGrey{
@@ -877,6 +936,11 @@ video {
   padding-bottom: 29px;
 }
 
+.py-\[9px\]{
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
 .pb-\[15px\]{
   padding-bottom: 15px;
 }
@@ -937,6 +1001,10 @@ video {
   font-size: 21px;
 }
 
+.text-\[13px\]{
+  font-size: 13px;
+}
+
 .uppercase{
   text-transform: uppercase;
 }
@@ -970,6 +1038,11 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-lightGrey{
+  --tw-text-opacity: 1;
+  color: rgb(197 197 197 / var(--tw-text-opacity));
+}
+
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -986,6 +1059,10 @@ html, body {
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.first-letter\:uppercase::first-letter{
+  text-transform: uppercase;
 }
 
 .hover\:bg-yellow:hover{

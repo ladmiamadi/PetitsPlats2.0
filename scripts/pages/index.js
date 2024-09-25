@@ -11,7 +11,7 @@ const search = searchBar();
 const filters = getFiltersSectionDOM();
 const filterDiv = document.createElement("div");
 filterDiv.className = "flex gap-[63px]";
-filterDiv.append(filters.ingredients, filters.devices, filters.utensils);
+filterDiv.append(filters.ingredients, filters.appliances, filters.utensils);
 
 const recipesLength = getRecipesLength();
 

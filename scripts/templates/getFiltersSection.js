@@ -6,15 +6,15 @@ export const getFiltersSectionDOM = () => {
 
     ingredients.append(ingredientsFilter.button, ingredientsFilter.modalContent);
 
-    const devices= document.createElement('div');
-    const devicesFilter= filter("appareils");
+    const appliances = document.createElement('div');
+    const appliancesFilter = filter("appareils");
 
-    devices.append(devicesFilter.button, devicesFilter.modalContent);
+    appliances.append(appliancesFilter.button, appliancesFilter.modalContent);
 
     const utensils= document.createElement('div');
     const utensilsFilter= filter("ustensiles");
 
     utensils.append(utensilsFilter.button, utensilsFilter.modalContent);
 
-    return { ingredients, devices , utensils};
+    return { ingredients, appliances , utensils};
 }
