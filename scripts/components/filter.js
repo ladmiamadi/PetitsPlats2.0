@@ -1,7 +1,7 @@
 import {dropdownFilter} from "../utils/dropdownFilter.js";
 import {getFilterList} from "../utils/filterList.js";
 
-export const filter = (filter) => {
+export const filter = (filter, recipes) => {
     const button = document.createElement('button');
     button.innerHTML = `<span>${filter}</span><span><i class="fa-solid fa-chevron-down" id=${filter}Arrow></i></span>`;
     button.className = "w-[195px] h-[56px] flex justify-between align-center bg-white text-darkGrey px-[16px] py-[17px] " +
@@ -25,12 +25,13 @@ export const filter = (filter) => {
     span.innerHTML = "<i class=\"fa-solid fa-magnifying-glass\"></i>";
 
     const filterList = document.createElement("ul");
-    const filterData = getFilterList(filter);
+    const filterData = getFilterList(filter, recipes);
 
     filterData.forEach(item => {
         const li = document.createElement("li");
         li.innerText = item;
         li.className = "first-letter:uppercase text-darkGrey text-[14px] py-[9px] px-[16px] cursor-pointer hover:bg-yellow";
+        li.onclick = () => getTag(item);
         filterList.append(li);
     })
 

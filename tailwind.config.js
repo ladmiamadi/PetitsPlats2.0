@@ -10,7 +10,7 @@ export default {
       'darkGrey': '#1B1B1B',
       'white': '#ffffff',
       'grey': '#7A7A7A',
-      'lightGrey': '#C5C5C5',
+      'lightGrey': '#EDEDED',
       'black': '#000000'
     },
     fontFamily: {

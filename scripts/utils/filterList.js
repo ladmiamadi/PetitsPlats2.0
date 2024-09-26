@@ -1,6 +1,4 @@
-import {recipes} from "../data/recipes.js";
-
-export const getFilterList = (filter) => {
+export const getFilterList = (filter, recipes) => {
     let filterList = [];
 
     if(filter === "ingredients") {
@@ -15,5 +13,5 @@ export const getFilterList = (filter) => {
         filterList = recipes.flatMap(recipe => recipe.ustensils);
     }
 
-    return filterList;
+    return [...new Set(filterList)].sort();
 };
