@@ -1,5 +1,5 @@
 import {dropdownFilter} from "../utils/dropdownFilter.js";
-import {getFilterList} from "../utils/filterList.js";
+import {updateFilter} from "../utils/filterList.js";
 
 export const filter = (filter, recipes) => {
     const button = document.createElement('button');
@@ -25,18 +25,11 @@ export const filter = (filter, recipes) => {
     span.innerHTML = "<i class=\"fa-solid fa-magnifying-glass\"></i>";
 
     const filterList = document.createElement("ul");
-    const filterData = getFilterList(filter, recipes);
+    const filterItems = updateFilter(filter, recipes, filterList)
 
-    filterData.forEach(item => {
-        const li = document.createElement("li");
-        li.innerText = item;
-        li.className = "first-letter:uppercase text-darkGrey text-[14px] py-[9px] px-[16px] cursor-pointer hover:bg-yellow";
-        li.onclick = () => getTag(item);
-        filterList.append(li);
-    })
 
     form.append(span, input);
-    modalContent.append(form, filterList);
+    modalContent.append(form, filterItems);
 
     return { button, modalContent };
 }
