@@ -26,18 +26,3 @@ export const getFilterList = (filter, recipes) => {
         return sortedObj;
     }, {});
 };
-
-export const updateFilter = (filter, recipes, ul) => {
-    ul.innerHTML = "";
-    const filterData = getFilterList(filter, recipes);
-
-    Object.keys(filterData).forEach((item) => {
-        const li = document.createElement("li");
-        li.innerText = item;
-        li.className = "first-letter:uppercase text-darkGrey text-[14px] py-[9px] px-[16px] cursor-pointer hover:bg-yellow";
-        li.onclick = () => addTag(item,filterData, ul, recipes);
-        ul.append(li);
-    })
-
-    return ul;
-};

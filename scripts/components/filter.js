@@ -1,5 +1,6 @@
 import {dropdownFilter} from "../utils/dropdownFilter.js";
-import {updateFilter} from "../utils/filterList.js";
+import {getFilterList } from "../utils/filterList.js";
+import {addTag} from "./tag.js";
 
 export const filter = (filter, recipes) => {
     const button = document.createElement('button');
@@ -25,11 +26,24 @@ export const filter = (filter, recipes) => {
     span.innerHTML = "<i class=\"fa-solid fa-magnifying-glass\"></i>";
 
     const filterList = document.createElement("ul");
-    const filterItems = updateFilter(filter, recipes, filterList)
+
+    //const filterItems = updateFilter(filter, recipes, filterList)
+
+    filterList.innerHTML = "";
+    const filterData = getFilterList(filter, recipes);
+
+    Object.keys(filterData).forEach((item) => {
+        const li = document.createElement("li");
+        li.setAttribute('data-tag', item);
+        li.innerText = item;
+        li.className = "first-letter:uppercase text-darkGrey text-[14px] py-[9px] px-[16px] cursor-pointer hover:bg-yellow";
+        li.onclick = () => addTag(item, filter);
+        filterList.append(li);
+    })
 
 
     form.append(span, input);
-    modalContent.append(form, filterItems);
+    modalContent.append(form, filterList);
 
     return { button, modalContent };
 }

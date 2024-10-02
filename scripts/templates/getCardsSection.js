@@ -1,5 +1,4 @@
 import {getCard} from "../components/card.js";
-import {recipes} from "../data/recipes.js";
 
 export const getCardsSectionDOM = (recipesSection, recipes, word) => {
     recipesSection.innerHTML = "";

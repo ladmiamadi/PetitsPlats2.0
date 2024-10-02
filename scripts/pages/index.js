@@ -4,11 +4,12 @@ import {getRecipesLength} from "../templates/getRecipesLenght.js";
 import {getCardsSectionDOM} from "../templates/getCardsSection.js";
 import {linearSearch} from "../utils/search.js";
 import {recipes} from "../data/recipes.js";
+import {updateCardsDOM} from "../templates/getUpdatedRecipes.js";
+
+//let resultSearch = [];
 
 const header = document.querySelector("header");
 const search = searchBar();
-
-let resultSearch = [];
 
 let filters = getFiltersSectionDOM(recipes);
 
@@ -24,7 +25,7 @@ filterSection.append(filters, recipesCount);
 getCardsSectionDOM(recipesSection, recipes);
 
 /**************************************/
-// LINEAR SEARCH
+// SEARCH SECTION
 /***************************************/
 
 const searchInput= document.getElementById("searchBar");
@@ -34,15 +35,9 @@ searchInput.addEventListener("input", (event) => {
     filterSection.innerHTML = "";
 
     if(word.length >= 3) {
-        resultSearch = linearSearch(word);
-        getCardsSectionDOM(recipesSection, resultSearch, word);
-        recipesCount = getRecipesLength(resultSearch);
-        filters = getFiltersSectionDOM(resultSearch);
+        const resultSearch = linearSearch(word);
+        updateCardsDOM(word, [], resultSearch);
     } else {
-        getCardsSectionDOM(recipesSection, recipes);
-        recipesCount = getRecipesLength(recipes);
-        filters = getFiltersSectionDOM(recipes);
+        updateCardsDOM("", {}, recipes);
     }
-
-    filterSection.append(filters, recipesCount);
 })

@@ -19,5 +19,5 @@ export const getTagsSectionDOM = (tags) => {
 
         tagDiv.append(p, button);
         tagsSection.appendChild(tagDiv);
-    })
+    });
 }
