@@ -614,6 +614,10 @@ video {
   right: 22px;
 }
 
+.right-\[25px\]{
+  right: 25px;
+}
+
 .top-\[10px\]{
   top: 10px;
 }
@@ -634,26 +638,6 @@ video {
   top: 51px;
 }
 
-.right-\[\]{
-  right: ;
-}
-
-.top-\[\]{
-  top: ;
-}
-
-.right-\[11px\]{
-  right: 11px;
-}
-
-.top-\[11px\]{
-  top: 11px;
-}
-
-.right-\[25px\]{
-  right: 25px;
-}
-
 .z-10{
   z-index: 10;
 }
@@ -672,16 +656,12 @@ video {
   margin-bottom: 21px;
 }
 
-.mb-\[32px\]{
-  margin-bottom: 32px;
-}
-
 .mb-\[24px\]{
   margin-bottom: 24px;
 }
 
-.mb-\[30px\]{
-  margin-bottom: 30px;
+.mb-\[32px\]{
+  margin-bottom: 32px;
 }
 
 .block{
@@ -712,6 +692,10 @@ video {
   height: 26px;
 }
 
+.h-\[36px\]{
+  height: 36px;
+}
+
 .h-\[51px\]{
   height: 51px;
 }
@@ -726,10 +710,6 @@ video {
 
 .h-\[72px\]{
   height: 72px;
-}
-
-.h-\[36px\]{
-  height: 36px;
 }
 
 .w-\[195px\]{
@@ -843,11 +823,6 @@ video {
 
 .border{
   border-width: 1px;
-}
-
-.border-grey{
-  --tw-border-opacity: 1;
-  border-color: rgb(122 122 122 / var(--tw-border-opacity));
 }
 
 .border-lightGrey{
@@ -985,6 +960,10 @@ video {
   font-size: 12px;
 }
 
+.text-\[13px\]{
+  font-size: 13px;
+}
+
 .text-\[14px\]{
   font-size: 14px;
 }
@@ -1001,16 +980,17 @@ video {
   font-size: 21px;
 }
 
-.text-\[13px\]{
-  font-size: 13px;
-}
-
 .uppercase{
   text-transform: uppercase;
 }
 
 .capitalize{
   text-transform: capitalize;
+}
+
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-darkGrey{
@@ -1023,6 +1003,11 @@ video {
   color: rgb(122 122 122 / var(--tw-text-opacity));
 }
 
+.text-lightGrey{
+  --tw-text-opacity: 1;
+  color: rgb(197 197 197 / var(--tw-text-opacity));
+}
+
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1031,16 +1016,6 @@ video {
 .text-yellow{
   --tw-text-opacity: 1;
   color: rgb(255 209 91 / var(--tw-text-opacity));
-}
-
-.text-black{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-lightGrey{
-  --tw-text-opacity: 1;
-  color: rgb(197 197 197 / var(--tw-text-opacity));
 }
 
 .shadow-md{
