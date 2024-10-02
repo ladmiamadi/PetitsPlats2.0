@@ -15,7 +15,7 @@ export const getTagsSectionDOM = (tags) => {
         const button = document.createElement("button");
         button.innerHTML = "<i class=\"fa-solid fa-xmark\"></i>";
         button.className = "text-[10px] p-[21px] text-darkGrey";
-        button.onclick = () => deleteTag(tag);
+        button.onclick = () => deleteTag(tag, tags);
 
         tagDiv.append(p, button);
         tagsSection.appendChild(tagDiv);

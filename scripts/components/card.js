@@ -27,7 +27,7 @@ export const getCard = (recipe) => {
     title1.className = "text-[12px] text-grey uppercase pb-[15px]";
 
     const p = document.createElement("p");
-    p.className = "text-[14px] text-darkGrey mb-[32px]";
+    p.className = "w-full text-[14px] text-darkGrey whitespace-normal mb-[32px] h-[80px] overflow-hidden text-ellipsis leading-[20px]";
     p.textContent = recipe.description;
 
     const title2 = document.createElement("h4");
