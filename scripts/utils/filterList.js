@@ -1,19 +1,28 @@
-import {recipes} from "../data/recipes.js";
+import {addTag} from "../components/tag.js";
 
-export const getFilterList = (filter) => {
-    let filterList = [];
+export const getFilterList = (filter, recipes) => {
+    let filterList = {};
 
     if(filter === "ingredients") {
         recipes.forEach(recipe => {
             recipe.ingredients.forEach(ingredientItem => {
-                filterList.push(ingredientItem.ingredient);
+                filterList[ingredientItem.ingredient] = "ingredients";
             });
         });
     } else if (filter === "appareils") {
-        filterList = recipes.map(recipe => recipe.appliance);
+        recipes.forEach(recipe => {
+            filterList[recipe.appliance] = "appareils";
+        });
     } else if (filter === "ustensiles") {
-        filterList = recipes.flatMap(recipe => recipe.ustensils);
+        recipes.forEach(recipe => {
+            recipe.ustensils.forEach(utensil => {
+                filterList[utensil] = "ustensiles";
+            });
+        });
     }
 
-    return filterList;
+    return Object.keys(filterList).sort().reduce((sortedObj, key) => {
+        sortedObj[key] = filterList[key];
+        return sortedObj;
+    }, {});
 };

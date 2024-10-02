@@ -647,6 +647,11 @@ video {
   margin-right: auto;
 }
 
+.my-\[10px\]{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .my-\[14px\]{
   margin-top: 14px;
   margin-bottom: 14px;
@@ -662,6 +667,10 @@ video {
 
 .mb-\[32px\]{
   margin-bottom: 32px;
+}
+
+.mr-\[20px\]{
+  margin-right: 20px;
 }
 
 .block{
@@ -712,6 +721,10 @@ video {
   height: 72px;
 }
 
+.h-\[80px\]{
+  height: 80px;
+}
+
 .w-\[195px\]{
   width: 195px;
 }
@@ -740,6 +753,10 @@ video {
   width: 954px;
 }
 
+.w-auto{
+  width: auto;
+}
+
 .w-full{
   width: 100%;
 }
@@ -763,6 +780,10 @@ video {
 
 .flex-col{
   flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
 }
 
 .items-center{
@@ -791,6 +812,14 @@ video {
 
 .overflow-y-scroll{
   overflow-y: scroll;
+}
+
+.text-ellipsis{
+  text-overflow: ellipsis;
+}
+
+.whitespace-normal{
+  white-space: normal;
 }
 
 .rounded-\[10px\]{
@@ -827,7 +856,7 @@ video {
 
 .border-lightGrey{
   --tw-border-opacity: 1;
-  border-color: rgb(197 197 197 / var(--tw-border-opacity));
+  border-color: rgb(237 237 237 / var(--tw-border-opacity));
 }
 
 .bg-darkGrey{
@@ -837,7 +866,7 @@ video {
 
 .bg-lightGrey{
   --tw-bg-opacity: 1;
-  background-color: rgb(197 197 197 / var(--tw-bg-opacity));
+  background-color: rgb(237 237 237 / var(--tw-bg-opacity));
 }
 
 .bg-white{
@@ -871,6 +900,10 @@ video {
   padding: 12px;
 }
 
+.p-\[21px\]{
+  padding: 21px;
+}
+
 .px-\[102px\]{
   padding-left: 102px;
   padding-right: 102px;
@@ -879,6 +912,11 @@ video {
 .px-\[16px\]{
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.px-\[18px\]{
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 .px-\[25px\]{
@@ -920,6 +958,10 @@ video {
   padding-bottom: 15px;
 }
 
+.pb-\[20px\]{
+  padding-bottom: 20px;
+}
+
 .pb-\[26px\]{
   padding-bottom: 26px;
 }
@@ -940,8 +982,8 @@ video {
   padding-top: 24px;
 }
 
-.pt-\[55px\]{
-  padding-top: 55px;
+.pt-\[48px\]{
+  padding-top: 48px;
 }
 
 .text-center{
@@ -954,6 +996,10 @@ video {
 
 .text-5xl{
   font-size: 44px;
+}
+
+.text-\[10px\]{
+  font-size: 10px;
 }
 
 .text-\[12px\]{
@@ -988,6 +1034,10 @@ video {
   text-transform: capitalize;
 }
 
+.leading-\[20px\]{
+  line-height: 20px;
+}
+
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1005,7 +1055,7 @@ video {
 
 .text-lightGrey{
   --tw-text-opacity: 1;
-  color: rgb(197 197 197 / var(--tw-text-opacity));
+  color: rgb(237 237 237 / var(--tw-text-opacity));
 }
 
 .text-white{
