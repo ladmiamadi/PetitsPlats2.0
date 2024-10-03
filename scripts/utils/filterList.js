@@ -1,5 +1,3 @@
-import {addTag} from "../components/tag.js";
-
 export const getFilterList = (filter, recipes) => {
     let filterList = {};
 
