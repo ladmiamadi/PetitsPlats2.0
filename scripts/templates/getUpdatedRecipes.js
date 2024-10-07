@@ -13,7 +13,7 @@ export const updateCardsDOM = (word, tagsList = {}, currentSearch = resultSearch
     filterSection.innerHTML = "";
     recipesSection.innerHTML = "";
 
-    if (currentSearch.length === 0) currentSearch = recipes;
+    //if ( currentSearch.length === 0 ) currentSearch = recipes;
 
     Object.keys(tagsList).forEach(tag => {
         if (tagsList[tag] === "ingredients") {
