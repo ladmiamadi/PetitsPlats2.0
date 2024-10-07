@@ -6,7 +6,6 @@ import {linearSearch} from "../utils/search.js";
 import {recipes} from "../data/recipes.js";
 import {updateCardsDOM} from "../templates/getUpdatedRecipes.js";
 
-//let resultSearch = [];
 
 const header = document.querySelector("header");
 const search = searchBar();
@@ -36,7 +35,7 @@ searchInput.addEventListener("input", (event) => {
 
     if(word.length >= 3) {
         const resultSearch = linearSearch(word);
-        updateCardsDOM(word, [], resultSearch);
+        updateCardsDOM(word, {}, resultSearch);
     } else {
         updateCardsDOM("", {}, recipes);
     }

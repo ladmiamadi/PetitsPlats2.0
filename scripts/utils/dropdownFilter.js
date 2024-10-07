@@ -5,6 +5,8 @@ export const dropdownFilter = (buttonId, modalId, arrow) => {
 
     if (modal.style.display === 'none') {
         modal.style.display = 'block';
+        modal.style.position = "absolute";
+        modal.style.zIndex = "9999";
         toggleButton.style.borderBottomRightRadius = "0";
         toggleButton.style.borderBottomLeftRadius = "0";
         chevron.classList.remove("fa-chevron-down");

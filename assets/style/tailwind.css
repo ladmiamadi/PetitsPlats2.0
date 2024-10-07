@@ -721,10 +721,6 @@ video {
   height: 72px;
 }
 
-.h-\[76px\]{
-  height: 76px;
-}
-
 .h-\[80px\]{
   height: 80px;
 }
@@ -818,20 +814,12 @@ video {
   overflow-y: scroll;
 }
 
-.overflow-ellipsis{
-  text-overflow: ellipsis;
-}
-
 .text-ellipsis{
   text-overflow: ellipsis;
 }
 
 .whitespace-normal{
   white-space: normal;
-}
-
-.whitespace-nowrap{
-  white-space: nowrap;
 }
 
 .rounded-\[10px\]{
@@ -964,16 +952,6 @@ video {
 .py-\[9px\]{
   padding-top: 9px;
   padding-bottom: 9px;
-}
-
-.px-\[6px\]{
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
-.py-\[5px\]{
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .pb-\[15px\]{
