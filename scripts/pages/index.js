@@ -4,13 +4,13 @@ import {getRecipesLength} from "../templates/getRecipesLenght.js";
 import {getCardsSectionDOM} from "../templates/getCardsSection.js";
 import {recipes} from "../data/recipes.js";
 import {updateCardsDOM} from "../templates/getUpdatedRecipes.js";
-import {invertedIndexSearch} from "../utils/invertedIndexSearch.js";
 
+let tagsList = {};
 
 const header = document.querySelector("header");
 const search = searchBar();
 
-let filters = getFiltersSectionDOM(recipes);
+let filters = getFiltersSectionDOM(recipes, tagsList);
 
 let recipesCount = getRecipesLength(recipes);
 
@@ -31,12 +31,9 @@ const searchInput= document.getElementById("searchBar");
 searchInput.addEventListener("input", (event) => {
     const word = event.target.value;
 
-    filterSection.innerHTML = "";
-
     if(word.length >= 3) {
-        const resultSearch = invertedIndexSearch(word);
-        updateCardsDOM(word, {}, resultSearch);
+        updateCardsDOM(word, tagsList);
     } else {
-        updateCardsDOM("", {}, recipes);
+        updateCardsDOM("", tagsList);
     }
-})
+});

@@ -1,24 +1,20 @@
 import {getTagsSectionDOM} from "../templates/getTagsSection.js";
 import {updateCardsDOM} from "../templates/getUpdatedRecipes.js";
-import {recipes} from "../data/recipes.js";
 
-let tagsList = {};
-let resultSearch = [];
+export const addTag = (tag, filter, tagsList) => {
+    let keyWord = document.getElementById("searchBar").value;
 
-export const addTag = (item, filter) => {
-    tagsList[item] = filter;
-
-    if (resultSearch.length === 0) {
-        resultSearch = recipes;
-    }
+    tagsList[tag] = filter;
 
     getTagsSectionDOM(tagsList);
-    updateCardsDOM(item, tagsList, resultSearch);
+    updateCardsDOM(keyWord, tagsList);
+
 }
 
 export const deleteTag = (tag, tagsList) => {
+    let keyWord = document.getElementById("searchBar").value;
     delete tagsList[tag];
 
     getTagsSectionDOM(tagsList);
-    updateCardsDOM("", tagsList, recipes);
+    updateCardsDOM(keyWord, tagsList);
 };
