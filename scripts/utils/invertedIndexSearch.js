@@ -1,18 +1,17 @@
 import {recipes} from "../data/recipes.js";
 
 export const invertedIndexSearch = (word) => {
-    let result = [];
-    word = word.toLowerCase();
-
+    let result = new Set();
     let index = createIndex(recipes);
+    word = word.toLowerCase();
 
     Object.keys(index).forEach(key => {
         if (key.includes(word)) {
-            result = result.concat(Array.from(index[key]));
+            index[key].forEach(recipe => result.add(recipe));
         }
     });
 
-    return result;
+    return Array.from(result);
 }
 
 const createIndex = (recipes) => {
