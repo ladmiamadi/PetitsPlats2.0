@@ -2,7 +2,7 @@ import {dropdownFilter} from "../utils/dropdownFilter.js";
 import {getFilterList } from "../utils/filterList.js";
 import {addTag} from "./tag.js";
 
-export const filter = (filter, recipes) => {
+export const filter = (filter, recipes, tagsList) => {
     const button = document.createElement('button');
     button.innerHTML = `<span>${filter}</span><span><i class="fa-solid fa-chevron-down" id=${filter}Arrow></i></span>`;
     button.className = "w-[195px] h-[56px] flex justify-between align-center bg-white text-darkGrey px-[16px] py-[17px] " +
@@ -27,8 +27,6 @@ export const filter = (filter, recipes) => {
 
     const filterList = document.createElement("ul");
 
-    //const filterItems = updateFilter(filter, recipes, filterList)
-
     filterList.innerHTML = "";
     const filterData = getFilterList(filter, recipes);
 
@@ -37,10 +35,9 @@ export const filter = (filter, recipes) => {
         li.setAttribute('data-tag', item);
         li.innerText = item;
         li.className = "first-letter:uppercase text-darkGrey text-[14px] py-[9px] px-[16px] cursor-pointer hover:bg-yellow";
-        li.onclick = () => addTag(item, filter);
+        li.onclick = () => addTag(item, filter, tagsList);
         filterList.append(li);
-    })
-
+    });
 
     form.append(span, input);
     modalContent.append(form, filterList);

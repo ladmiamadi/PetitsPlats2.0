@@ -1,34 +1,30 @@
-import {searchByAppliance, searchByIngredients, searchByUtensil} from "../utils/search.js";
+import {linearSearch, searchByAppliance, searchByIngredients, searchByUtensil} from "../utils/search.js";
 import {getCardsSectionDOM} from "./getCardsSection.js";
 import {getRecipesLength} from "./getRecipesLenght.js";
 import {getFiltersSectionDOM} from "./getFiltersSection.js";
-import {recipes} from "../data/recipes.js";
 
-let resultSearch = [];
-
-export const updateCardsDOM = (word, tagsList = {}, currentSearch = resultSearch) => {
+export const updateCardsDOM = (word, tagsList = {}) => {
     const filterSection = document.getElementById("filters");
     const recipesSection = document.getElementById("recipes");
 
     filterSection.innerHTML = "";
     recipesSection.innerHTML = "";
 
-    //if ( currentSearch.length === 0 ) currentSearch = recipes;
+    let resultSearch = linearSearch(word);
 
     Object.keys(tagsList).forEach(tag => {
         if (tagsList[tag] === "ingredients") {
-            currentSearch = searchByIngredients(tag, currentSearch);
+            resultSearch = searchByIngredients(tag, resultSearch);
         } else if (tagsList[tag] === "ustensiles") {
-            currentSearch = searchByUtensil(tag, currentSearch);
+            resultSearch = searchByUtensil(tag, resultSearch);
         } else if (tagsList[tag] === "appareils") {
-            currentSearch = searchByAppliance(tag, currentSearch);
+            resultSearch = searchByAppliance(tag, resultSearch);
         }
     });
 
-    resultSearch = currentSearch;
+    const result = getFiltersSectionDOM(resultSearch, tagsList);
+    const recipesCount = getRecipesLength(resultSearch);
 
-    const result = getFiltersSectionDOM(currentSearch);
-    const recipesCount = getRecipesLength(currentSearch);
-    getCardsSectionDOM(recipesSection, currentSearch, word);
+    getCardsSectionDOM(recipesSection, resultSearch, word);
     filterSection.append(result, recipesCount);
 };
