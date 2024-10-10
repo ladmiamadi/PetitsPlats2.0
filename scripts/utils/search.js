@@ -1,13 +1,21 @@
 import {recipes} from "../data/recipes.js";
 
 export const linearSearch = (word) => {
+    let resultSearch = [];
+
     word = word.toLowerCase();
 
-    return recipes.filter(recipe =>
-        recipe.name.toLowerCase().includes(word) ||
-        recipe.description.toLowerCase().includes(word) ||
-        recipe.ingredients.some(ingredient => ingredient.ingredient.toLowerCase().includes(word))
-    );
+    recipes.forEach(recipe => {
+        if (
+            recipe.name.toLowerCase().includes(word) ||
+            recipe.description.toLowerCase().includes(word) ||
+            recipe.ingredients.some(ingredient => ingredient.ingredient.toLowerCase().includes(word))
+        ) {
+            resultSearch.push(recipe);
+        }
+    });
+
+    return resultSearch;
 }
 
 export const searchByIngredients = (word, recipes) => {
