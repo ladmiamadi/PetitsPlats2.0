@@ -18,9 +18,19 @@ const createIndex = (recipes) => {
     let index = {};
 
     recipes.forEach(recipe => {
+        const phrases = [
+            recipe.name.toLowerCase(),
+            recipe.description.toLowerCase(),
+            ...recipe.ingredients.map(item => item.ingredient.toLowerCase())
+        ];
+
+        phrases.forEach(item => {
+            if (!index[item]) index[item] = new Set();
+            index[item].add(recipe);
+        });
+
         const words = [
             ...recipe.name.split(" "),
-            ...recipe.name,
             ...recipe.description.split(" "),
             ...recipe.ingredients.map(item => item.ingredient)
         ];
@@ -29,7 +39,6 @@ const createIndex = (recipes) => {
             let word = item.toLowerCase();
 
             if (!index[word]) index[word] = new Set();
-
             index[word].add(recipe);
         });
     });
