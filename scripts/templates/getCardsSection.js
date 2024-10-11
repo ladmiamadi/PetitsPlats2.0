@@ -5,7 +5,7 @@ export const getCardsSectionDOM = (recipesSection, recipes, word) => {
     recipesSection.classList.add("grid-cols-3");
 
     recipes.forEach(card => {
-        let item = getCard(card);
+        const item = getCard(card);
         recipesSection.append(item);
     });
 

@@ -5,14 +5,14 @@ import {getCardsSectionDOM} from "../templates/getCardsSection.js";
 import {recipes} from "../data/recipes.js";
 import {updateCardsDOM} from "../templates/getUpdatedRecipes.js";
 
-let tagsList = {};
+const tagsList = {};
 
 const header = document.querySelector("header");
 const search = searchBar();
 
-let filters = getFiltersSectionDOM(recipes, tagsList);
+const filters = getFiltersSectionDOM(recipes, tagsList);
 
-let recipesCount = getRecipesLength(recipes);
+const recipesCount = getRecipesLength(recipes);
 
 const filterSection = document.getElementById("filters");
 
@@ -36,4 +36,4 @@ searchInput.addEventListener("input", (event) => {
     } else {
         updateCardsDOM("", tagsList);
     }
-})
+});

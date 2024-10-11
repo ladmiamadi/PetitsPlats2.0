@@ -6,12 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start --server --files \"*\"",
-    "style": " npx tailwindcss -i ./assets/style/home.css -o ./assets/style/tailwind.css --watch\n"
+    "style": " npx tailwindcss -i ./assets/style/home.css -o ./assets/style/tailwind.css --watch\n",
+    "lint": "eslint \"scripts/**/*.js\""
   },
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "eslint": "^9.12.0",
+    "globals": "^15.11.0",
     "tailwindcss": "^3.4.12"
   }
 }

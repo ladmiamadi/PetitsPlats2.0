@@ -2,7 +2,7 @@ import {getTagsSectionDOM} from "../templates/getTagsSection.js";
 import {updateCardsDOM} from "../templates/getUpdatedRecipes.js";
 
 export const addTag = (tag, filter, tagsList) => {
-    let keyWord = document.getElementById("searchBar").value;
+    const keyWord = document.getElementById("searchBar").value;
 
     tagsList[tag] = filter;
 
@@ -11,7 +11,7 @@ export const addTag = (tag, filter, tagsList) => {
 }
 
 export const deleteTag = (tag, tagsList) => {
-    let keyWord = document.getElementById("searchBar").value;
+    const keyWord = document.getElementById("searchBar").value;
     delete tagsList[tag];
 
     getTagsSectionDOM(tagsList);

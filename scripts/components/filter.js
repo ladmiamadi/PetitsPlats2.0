@@ -1,8 +1,11 @@
 import {dropdownFilter} from "../utils/dropdownFilter.js";
 import {getFilterList } from "../utils/filterList.js";
 import {addTag} from "./tag.js";
+import {searchTag} from "../templates/getTagsSection.js";
 
 export const filter = (filter, recipes, tagsList) => {
+    const filterData = getFilterList(filter, recipes);
+
     const button = document.createElement('button');
     button.innerHTML = `<span>${filter}</span><span><i class="fa-solid fa-chevron-down" id=${filter}Arrow></i></span>`;
     button.className = "w-[195px] h-[56px] flex justify-between align-center bg-white text-darkGrey px-[16px] py-[17px] " +
@@ -17,18 +20,19 @@ export const filter = (filter, recipes, tagsList) => {
 
     const form = document.createElement("form");
     form.className = "px-[16px]";
+
     const input = document.createElement("input");
     input.type = "text";
     input.className = "w-full h-[36px] border border-lightGrey my-[14px] rounded-[2px]";
+    input.oninput = (e) => searchTag(e, filter, filterData);
 
     const span = document.createElement("span");
     span.className = "text-lightGrey text-[13px] absolute top-[21px] right-[25px] z-10 mb-[24px]";
     span.innerHTML = "<i class=\"fa-solid fa-magnifying-glass\"></i>";
 
     const filterList = document.createElement("ul");
-
+    filterList.id = `filterList${filter}`;
     filterList.innerHTML = "";
-    const filterData = getFilterList(filter, recipes);
 
     Object.keys(filterData).forEach((item) => {
         const li = document.createElement("li");

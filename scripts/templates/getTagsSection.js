@@ -20,4 +20,20 @@ export const getTagsSectionDOM = (tags) => {
         tagDiv.append(p, button);
         tagsSection.appendChild(tagDiv);
     });
+};
+
+export const searchTag = (event, filter, tags) => {
+    const tag = event.target.value.toLowerCase();
+    const ul = document.getElementById(`filterList${filter}`);
+
+    ul.innerHTML = "";
+
+    const resultList = Object.keys(tags).filter(item => item.toLowerCase().includes(tag));
+
+    resultList.forEach(result => {
+        const li = document.createElement("li");
+        li.textContent = result;
+        li.className = "first-letter:uppercase text-darkGrey text-[14px] py-[9px] px-[16px] cursor-pointer hover:bg-yellow";
+        ul.appendChild(li);
+    });
 }
