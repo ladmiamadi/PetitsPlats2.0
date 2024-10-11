@@ -11,7 +11,6 @@ export const updateCardsDOM = (word, tagsList = {}) => {
     filterSection.innerHTML = "";
     recipesSection.innerHTML = "";
 
-
     let resultSearch = invertedIndexSearch(word);
 
     Object.keys(tagsList).forEach(tag => {

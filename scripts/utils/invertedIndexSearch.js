@@ -1,8 +1,8 @@
 import {recipes} from "../data/recipes.js";
 
 export const invertedIndexSearch = (word) => {
-    let result = new Set();
-    let index = createIndex(recipes);
+    const result = new Set();
+    const index = createIndex(recipes);
     word = word.toLowerCase();
 
     Object.keys(index).forEach(key => {
@@ -15,7 +15,7 @@ export const invertedIndexSearch = (word) => {
 }
 
 const createIndex = (recipes) => {
-    let index = {};
+    const index = {};
 
     recipes.forEach(recipe => {
         const phrases = [
@@ -36,7 +36,7 @@ const createIndex = (recipes) => {
         ];
 
         words.forEach(item => {
-            let word = item.toLowerCase();
+            const word = item.toLowerCase();
 
             if (!index[word]) index[word] = new Set();
             index[word].add(recipe);

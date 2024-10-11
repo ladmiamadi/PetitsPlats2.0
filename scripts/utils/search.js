@@ -1,7 +1,7 @@
 import {recipes} from "../data/recipes.js";
 
 export const linearSearch = (word) => {
-    let resultSearch = [];
+    const resultSearch = [];
 
     word = word.toLowerCase();
 

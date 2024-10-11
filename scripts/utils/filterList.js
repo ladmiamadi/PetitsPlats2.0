@@ -1,5 +1,5 @@
 export const getFilterList = (filter, recipes) => {
-    let filterList = {};
+    const filterList = {};
 
     if(filter === "ingredients") {
         recipes.forEach(recipe => {
