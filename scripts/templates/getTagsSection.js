@@ -1,5 +1,6 @@
-import {deleteTag} from "../components/tag.js";
+import {addTag, deleteTag} from "../components/tag.js";
 
+let tagsList = {};
 export const getTagsSectionDOM = (tags) => {
     const tagsSection = document.getElementById("tags");
     tagsSection.innerHTML = "";
@@ -33,6 +34,7 @@ export const searchTag = (event, filter, tags) => {
     resultList.forEach(result => {
         const li = document.createElement("li");
         li.textContent = result;
+        li.onclick = () => addTag(result, filter, tagsList);
         li.className = "first-letter:uppercase text-darkGrey text-[14px] py-[9px] px-[16px] cursor-pointer hover:bg-yellow";
         ul.appendChild(li);
     });
